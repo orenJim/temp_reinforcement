@@ -1,0 +1,71 @@
+$font: Helvetica, sans-serif;
+$primary-color: #EEE;
+$Title-color: #AAA;
+$testing-border: 1px solid #FFF;
+
+
+body {
+	margin:0;
+	background: darken($primary-color, 5%);
+	height:100vh;
+}
+
+
+.TitleMainContainer {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding:50px;
+	border: $testing-border;
+}
+
+.TitleMainTextContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 50px;
+	color: $Title-color;
+}
+
+.SearchMainContainer{
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	padding:20px;
+	border: $testing-border;
+}
+
+.SearchContainer{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	font-size: 30px;
+	color: $Title-color;
+}
+
+.submitIngredient{
+	width:100px;
+	padding:20px;
+	font-size:14px;
+}
+
+.drinksIconPicturesFlexContainer{
+	display:flex;
+	flex-direction: row;
+	width: 70%;
+	flex-wrap: wrap;
+}
+
+.drinkIconPictureContainer{
+	width:380px;
+	height:380px;
+	border:$testing-border;
+}
+
+.drinksMainContainer{
+	margin-left: auto;
+ 	margin-right: auto;
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+}
