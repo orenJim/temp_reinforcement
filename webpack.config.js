@@ -5,7 +5,7 @@ module.exports = {
   entry: './src/client/index.js',
   output: {
     path: path.resolve(__dirname, 'build'),
-    filename: 'webpack-bundle.js',
+    filename: 'bundle.js',
   },
   module: {
     rules: [
