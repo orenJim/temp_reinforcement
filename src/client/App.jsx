@@ -41,6 +41,21 @@ class DrinksCard extends React.Component {
 	render() {
 		return (
 			 <div className = "drinkIconPictureContainer">
+			 <div className="flip-cards">
+			 	<div className="frontCard">
+				 	<img src="https://s3.us-east-2.amazonaws.com/db-cocktail/images/negroni.jpg" />
+				</div>
+				 <div className="backCard">
+				 	<div className="horizontalContainer">
+						 <div className="verticalContainer">
+								<div>Ingredients</div>
+								<div>Apple</div>
+								<div>Bananna</div>
+								<div className="button" onClick={() => console.log('hi')}>Find out more</div>
+						 </div>
+					 </div>
+				 </div>
+				 </div>
 			 </div>
 
 		)
@@ -56,11 +71,17 @@ class App extends React.Component {
 			inputbox_text:"",
 			userSelectedIngredients_arrString: [],
 			ingredient_arrString: ["sweet vermouth", "orange juice", "simple syrup", "lime juice", "lemon juice", "london dry gin", "vodka", "rum", "dry vermouth", "bourbon whiskey", "rye whiskey", "irish whiskey", "scotch whisky", "japanese whiskey", "whiskey", "whisky", "gin", "campari", "brandy", "cognac", "tequila", "sherry", "7-up", "tonic water", "soda water", "ginger beer", "pisco", "coke", "sake", "ginger ale", "irish cream", "chartreuse", "milk", "eggs", "cranberry jiuce", "triple sec", "beer", "mezcal", "champagne", "white wine", "red wine", "port wine", "sprite", "prosecco", "campari", "bitters", "lime wedge", "ice cube", "olive"],
-
+			recipes_arrObject:[],
 		}
 		this.handleInputChange = this.handleInputChange.bind(this)
 		this.addIngredient = this.addIngredient.bind(this)
-  }
+	}
+	
+	componentDidMount() {
+		fetch('http://cocktail-gurus.com:3000/recipes')
+			.then(data => data.JSON())
+			.then(data => console.log(data))
+	}
 
 	handleInputChange(event) {
 		this.setState({inputbox_text: event.target.value})

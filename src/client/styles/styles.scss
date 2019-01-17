@@ -57,9 +57,11 @@ body {
 }
 
 .drinkIconPictureContainer{
+
 	width:380px;
 	height:380px;
 	border:$testing-border;
+	perspective:1000;
 }
 
 .drinksMainContainer{
@@ -68,4 +70,63 @@ body {
 	display:flex;
 	flex-direction: row;
 	justify-content: center;
+}
+
+.frontCard{
+	position: absolute;
+	border-radius: 50%;
+	width:330px;
+	backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+}
+img {
+
+	border-radius: 50%;
+	width:330px;
+  }
+
+.backCard {
+
+	position: absolute;
+	background-color: #FFF;
+	border-radius: 50%;
+	width:325px;
+	height:325px;
+	transform: rotateY( 180deg );
+	backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+	
+}
+
+.horizontalContainer{
+	display:flex;
+	flex-direction: row;
+	justify-content: center;
+	height:325px;
+}
+
+.verticalContainer{
+	display:flex;
+	flex-direction: column;
+	justify-content:center;
+	align-items: center;
+}
+
+.flip-cards {
+	-webkit-transition: all 1s ease;
+    transition: all 1s ease;
+    -webkit-transform-style: preserve-3d;
+	transform-style: preserve-3d;
+	height:330px;
+	width:330px;
+	
+}
+
+.flip-cards:hover {
+    transform: rotateY( 180deg );
+    -webkit-transform: rotateY(180deg);
+}
+
+.button {
+	background-color:rgb(184, 183, 183)
 }
